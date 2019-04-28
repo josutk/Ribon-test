@@ -1,0 +1,9 @@
+FROM ruby:2.5.1
+RUN apt-get update -qq && apt-get install -y build-essential libpq-dev
+RUN mkdir /pokemon_api
+WORKDIR /pokemon_api
+ADD Gemfile /pokemon_api/Gemfile
+ADD Gemfile.lock /pokemon_api/Gemfile.lock
+RUN bundle install
+ADD . /pokemon_api
+RUN rm -f /pokemon_api/tmp/pids/server.pid

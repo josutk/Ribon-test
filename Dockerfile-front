@@ -1,0 +1,5 @@
+FROM node:9
+WORKDIR /app
+COPY ./front-end /app
+RUN npm install -g create-react-app
+RUN npm install
