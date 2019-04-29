@@ -4,3 +4,11 @@
     overflow:scroll;
     -webkit-overflow-scrolling: touch;
 }
+
+#search-pokemon{
+    
+    height: 200px;
+    width: 50%;    
+    margin-left:25%;
+    margin-top: 7%;
+}
