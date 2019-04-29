@@ -41,11 +41,11 @@ class PokemonsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_pokemon
-      @pokemon = Pokemon.find(params[:id])
+      @pokemon = Pokemon.find_by(name: params[:name])
     end
 
     # Only allow a trusted parameter "white list" through.
     def pokemon_params
-      params.require(:pokemon).permit(:indetifier, :name, :type1, :type2)
+      params.permit(:indetifier, :name, :type1, :type2)
     end
 end

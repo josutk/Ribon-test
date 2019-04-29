@@ -76,6 +76,7 @@ GEM
       mini_portile2 (~> 2.4.0)
     pg (1.1.4)
     rack (2.0.7)
+    rack-cors (1.0.3)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
     rails (5.2.0)
@@ -129,6 +130,7 @@ DEPENDENCIES
   bootsnap
   listen (~> 3.1.5)
   pg
+  rack-cors
   rails (= 5.2.0)
 
 BUNDLED WITH
