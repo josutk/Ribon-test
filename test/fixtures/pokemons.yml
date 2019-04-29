@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  indetifier: 1
+  name: MyString
+  type1: MyString
+  type2: MyString
+
+two:
+  indetifier: 1
+  name: MyString
+  type1: MyString
+  type2: MyString
