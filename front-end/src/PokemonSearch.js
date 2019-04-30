@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import axios from 'axios'
+import {Link} from 'react-router-dom'
 
 class PokemonSearch extends Component{
     constructor(props){
@@ -25,7 +26,9 @@ class PokemonSearch extends Component{
             <div>
                 <form onSubmit={this.handlerSubmit}>
                     <input type="text" onChange={this.handlerOnChange} />
-                    <input type="submit" className="submit-button" value="See Status" onSubmit={this.handlerSubmit} />
+                    <Link to="/Details">
+                        <input type="submit" className="submit-button" value="See Status" onSubmit={this.handlerSubmit} />
+                    </Link>
                 </form>
             </div>
         )
