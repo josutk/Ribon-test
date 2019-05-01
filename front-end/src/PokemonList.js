@@ -35,9 +35,11 @@ class PokemonList extends Component{
         return (
             <div id="search-pokemon">
                 <div>
-                    <form onSubmit={this.handlerSubmit}>
-                        <button type="submit" className="btn btn-primary" onSubmit={this.handlerSubmit}>List</button>
-                    </form>
+                    <form id="form-list"onSubmit={this.handlerSubmit}>
+                        <div id="list-button">
+                            <button type="submit" className="btn btn-primary" onSubmit={this.handlerSubmit}>List All Pokemon</button>
+                        </div>
+                   </form>
                 </div>
                 {this.showPokemons()}
             </div>

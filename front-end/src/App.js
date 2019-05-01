@@ -13,7 +13,9 @@ class App extends Component{
                 </header>
             <div>
                 <body>
-                    <PokemonList />
+                    <div>
+                        <PokemonList />
+                    </div>
                     <div id="pokemon-search">
                         <PokemonSearch />
                     </div>
