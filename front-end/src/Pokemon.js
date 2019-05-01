@@ -10,8 +10,8 @@ class Pokemon extends Component{
                 nameCreate:'',
                 type1:'',
                 type2:'',
-                identifier:''
-           
+                identifier:'',
+                evolutions: '',                
            }
          
          this.handlerUpdate = this.handlerUpdate.bind(this)
@@ -21,7 +21,7 @@ class Pokemon extends Component{
          this.setType1 = this.setType1.bind(this)
          this.setType2 = this.setType2.bind(this)
          this.setIdentifier = this.setIdentifier.bind(this)
-    
+         this.showEvolutions = this.showEvolutions.bind(this) 
     }
 
     //Put
@@ -67,6 +67,38 @@ class Pokemon extends Component{
 
     setIdentifier(event){
         this.setState({identifier: event.target.value})
+    }
+    
+    showEvolutions(){
+         axios.get("http://localhost:3000/evolutions/"+this.props.name)
+            .then(response=> this.setState({evolutions: response.data}))
+        console.log(this.state.evolutions)
+    
+    }
+    showFirstEvolution(){
+         
+                        
+        console.log(this.state.evolutions)
+         if(this.state.evolutions['first_evolution']!=="None"){
+           
+           return  (<div>
+                            {this.state.evolutions['first_evolution']}
+                        </div>
+                       )
+            
+        }
+    
+    }
+
+    showSecondEvolution(){
+      
+        console.log(this.state.evolutions)
+       if(this.state.evolutions['second_evolution']!=="None"){
+        
+          return  (<div>
+                       {this.state.evolutions['second_evolution']}
+                       </div>)
+        }
     }
 
     formsCreate(){
@@ -163,11 +195,19 @@ class Pokemon extends Component{
         
         return (
            <div id="crud-div">
-                        {this.formsCreate()}
-                        {this.formsUpdate()}
-                        <button type="button" className="btn btn-danger" onClick={this.handlerDelete}>Delete</button>
-                        {this.showAttr()}
-            </div>
+                        <div id="show-infos">
+                            {this.showAttr()}
+                            <button onClick={this.showEvolutions}>List Evolutions </button>
+
+                        {this.showFirstEvolution()}
+                        {this.showSecondEvolution()}
+                        </div>
+                        <div id="crud-forms">
+                            {this.formsCreate()}
+                            {this.formsUpdate()}
+                            <button type="button" className="btn btn-danger" onClick={this.handlerDelete}>Delete</button>
+                        </div>
+                    </div>
         )
     
     }

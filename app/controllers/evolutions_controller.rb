@@ -41,7 +41,8 @@ class EvolutionsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_evolution
-      @evolution = Evolution.find(params[:id])
+      @evolution = Evolution.find_by(pokemon: params[:pokemon])
+
     end
 
     # Only allow a trusted parameter "white list" through.
