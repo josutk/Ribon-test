@@ -41,6 +41,7 @@ class PokemonSearch extends Component{
                    </div>
         }
     }
+    
     render(){
         return (
             <div>
