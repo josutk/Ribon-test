@@ -1,25 +1,8 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Run project
 
-Things you may want to cover:
+* sudo docker-compose up
+* Open your localhost:3001 to front
+* Open your localhost:3000/pokemons to back
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# Ribon-test
